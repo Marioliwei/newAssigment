@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "1055663824053",
+    "firebase_url": "https://newassigment-1f203.firebaseio.com",
+    "project_id": "newassigment-1f203",
+    "storage_bucket": "newassigment-1f203.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1055663824053:android:9aff8337cd800b2386f2fc",
+        "android_client_info": {
+          "package_name": "com.example.newassigment"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1055663824053-60fmbabtu3i6spubhelqjo1i6ng9a9uv.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.newassigment",
+            "certificate_hash": "f0dddb6d0e1b06d613e98578743d31d3124ad81f"
+          }
+        },
+        {
+          "client_id": "1055663824053-v7tp98854ija8emcbfsqb4q2jcfe4j1c.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA5Fx7JTF0PiEJfDFL4Cq4hXc1YH19696o"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1055663824053-v7tp98854ija8emcbfsqb4q2jcfe4j1c.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
