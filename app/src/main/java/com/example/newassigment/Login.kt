@@ -7,20 +7,24 @@ import android.util.Patterns
 import android.widget.Toast
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
+import com.google.firebase.database.DatabaseReference
+import com.google.firebase.database.FirebaseDatabase
 import kotlinx.android.synthetic.main.activity_login.*
 import kotlinx.android.synthetic.main.activity_register.*
 
 class Login : AppCompatActivity() {
     private lateinit var auth: FirebaseAuth
+    private lateinit var database: DatabaseReference
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
         auth = FirebaseAuth.getInstance()
+        database = FirebaseDatabase.getInstance().reference
 
         buttonRegisteronLogin.setOnClickListener{
             startActivity(Intent(this,Register::class.java))
-            finish()
+            //finish()
         }
 
         buttonLoginOnLogin.setOnClickListener{
@@ -30,18 +34,18 @@ class Login : AppCompatActivity() {
 
     private fun doLogin() {
         if(editTextEmailOnLogin.text.toString().isEmpty()){
-            editTextEmail.error="Please Enter your Email."
-            editTextEmail.requestFocus()
+            editTextEmailOnLogin.error="Please Enter your Email."
+            editTextEmailOnLogin.requestFocus()
             return
             }
-        if(!Patterns.EMAIL_ADDRESS.matcher(editTextEmail.text.toString()).matches()){
-            editTextEmail.error="Please Enter Valid Email."
-            editTextEmail.requestFocus()
+        if(!Patterns.EMAIL_ADDRESS.matcher(editTextEmailOnLogin.text.toString()).matches()){
+            editTextEmailOnLogin.error="Please Enter Valid Email."
+            editTextEmailOnLogin.requestFocus()
             return
         }
-        if(editTextPassword.text.toString().isEmpty()){
-            editTextPassword.error="Please Enter your Password"
-            editTextPassword.requestFocus()
+        if(editTextLoginPasswrod.text.toString().isEmpty()){
+            editTextLoginPasswrod.error="Please Enter your Password"
+            editTextLoginPasswrod.requestFocus()
             return
         }
 
@@ -53,8 +57,6 @@ class Login : AppCompatActivity() {
                     val user = auth.currentUser
                     updateUI(user)
                 } else {
-                    Toast.makeText(baseContext, "Login failed.",
-                        Toast.LENGTH_SHORT).show()
                     updateUI(null)
                 }
             }
@@ -63,11 +65,11 @@ class Login : AppCompatActivity() {
 
     public override fun onStart() {
         super.onStart()
-        val currentUser = auth.currentUser
-        updateUI(currentUser)
+        val currentUser=auth.currentUser
+        //updateUI(currentUser)
     }
-    
-    private fun updateUI(currentUser: FirebaseUser?) {
+
+        private fun updateUI(currentUser: FirebaseUser?) {
         if(currentUser!=null){
             if(currentUser.isEmailVerified){
                 startActivity(Intent(this,MainActivity::class.java))

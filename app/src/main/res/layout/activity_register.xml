@@ -21,7 +21,7 @@
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.183" />
+        app:layout_constraintVertical_bias="0.169" />
 
     <EditText
         android:id="@+id/editTextUsername"
@@ -45,7 +45,7 @@
         android:id="@+id/radioGroup"
         android:layout_width="375dp"
         android:layout_height="29dp"
-        android:layout_marginStart="16dp"
+        android:layout_marginStart="32dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
         android:orientation="horizontal"
@@ -57,16 +57,16 @@
 
         <RadioButton
             android:id="@+id/radioButtonStudent"
-            android:layout_width="169dp"
-            android:layout_height="wrap_content"
+            android:layout_width="158dp"
+            android:layout_height="match_parent"
             android:text="Student"
             android:textAlignment="center"
             android:textSize="18sp" />
 
         <RadioButton
             android:id="@+id/radioButtonLecture"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_width="149dp"
+            android:layout_height="match_parent"
             android:text="Lecture"
             android:textAlignment="center"
             android:textSize="18sp" />
@@ -127,7 +127,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="32dp"
         android:layout_marginEnd="16dp"
         android:ems="10"
         android:hint="Password"
@@ -166,6 +166,18 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTextUsername"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <CheckedTextView
+        android:id="@+id/checkedTextViewState"
+        android:layout_width="328dp"
+        android:layout_height="17dp"
+        android:layout_marginTop="8dp"
+        android:textAlignment="viewEnd"
+        app:layout_constraintBottom_toTopOf="@+id/editTextPassword"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/radioGroup"
         app:layout_constraintVertical_bias="0.0" />
 
 
